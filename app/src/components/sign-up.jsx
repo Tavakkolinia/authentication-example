@@ -5,6 +5,7 @@ class SignUp extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      idNumber: '',
       firstName: '',
       lastName: '',
       email: '',
@@ -22,7 +23,8 @@ class SignUp extends React.Component {
   }
 
   handleLogin() {
-    axios.post('http://127.0.0.1:3000/users', {
+    axios.post('http://localhost:3000/users', {
+      idNumber: this.state.idNumber,
       firstName: this.state.firstName,
       lastName: this.state.lastName,
       email: this.state.email,
@@ -37,6 +39,17 @@ class SignUp extends React.Component {
     return (
       <div>
         <h1>Sign Up</h1>
+        <div>
+          <label htmlFor="idNumber">
+            ID Number:
+            <input
+              type="number"
+              name="idNumber"
+              value={this.state.idNumber}
+              onChange={this.handleInputChange}
+            />
+          </label>
+        </div>
         <div>
           <label htmlFor="firstName">
             First Name:
@@ -74,7 +87,7 @@ class SignUp extends React.Component {
           <label htmlFor="email">
             Password:
             <input
-              type="text"
+              type="password" // to appear with dots change the value to password
               name="password"
               value={this.state.password}
               onChange={this.handleInputChange}

@@ -2,6 +2,11 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 
 const userSchema = new mongoose.Schema({
+  idNumber: {
+    type: Number,
+    min: 10000,
+    max: 99999
+},
   firstName: String,
   lastName: String,
   email: String,

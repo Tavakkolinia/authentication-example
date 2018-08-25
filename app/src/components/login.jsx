@@ -23,7 +23,7 @@ class Login extends React.Component {
   }
 
   handleLogin() {
-    axios.post('http://127.0.0.1:3000/auth/login', {
+    axios.post('http://localhost:3000/auth/login', {
       email: this.state.email,
       password: this.state.password,
     })
@@ -55,7 +55,7 @@ class Login extends React.Component {
           <label htmlFor="email">
             Password:
             <input
-              type="text"
+              type="password"
               name="password"
               value={this.state.password}
               onChange={this.handleInputChange}

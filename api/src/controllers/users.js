@@ -13,6 +13,7 @@ const index = (req, res) => {
 
 const create = (req, res) => {
   const user = new User({
+    idNumber: req.body.idNumber,
     firstName: req.body.firstName,
     lastName: req.body.lastName,
     email: req.body.email,
