@@ -5,6 +5,5 @@ const router = express.Router();
 
 router.route('/')
   .get(UsersController.index)
-  .post(UsersController.create); 
-  
+  .post(UsersController.create);
 module.exports = router;

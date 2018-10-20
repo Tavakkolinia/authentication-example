@@ -5,8 +5,8 @@ const userSchema = new mongoose.Schema({
   idNumber: {
     type: Number,
     min: 10000,
-    max: 99999
-},
+    max: 99999,
+  },
   firstName: String,
   lastName: String,
   email: String,
@@ -18,8 +18,8 @@ const userSchema = new mongoose.Schema({
 
 userSchema.methods.validatePassword = function validatePassword(password) {
   return bcrypt.compareSync(password, this.password);
-}
+};
 
-const User =  mongoose.model('User', userSchema);
+const User = mongoose.model('User', userSchema);
 
 module.exports = User;

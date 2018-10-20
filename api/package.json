@@ -5,15 +5,20 @@
   "main": "index.js",
   "dependencies": {
     "bcrypt": "^3.0.0",
+    "body-parser": "^1.18.2",
     "cors": "^2.8.4",
-    "dotenv": "^5.0.1",
+    "dotenv": "^6.0.0",
     "express": "^4.16.3",
-    "mongoose": "^5.1.2"
+    "mongoose": "^5.1.2",
+    "express-restify-mongoose": "^4.3.0",
+    "method-override": "^2.3.10",
+    "nodemailer": "^4.6.8"
   },
   "devDependencies": {
     "nodemon": "^1.17.5"
   },
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.js"
   },
   "author": "",
