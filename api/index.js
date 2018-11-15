@@ -8,17 +8,19 @@ const { auth, users } = require('./src/routes');
 // require('dotenv').config();
 
 const app = express();
+
+app.use(express.json());
+app.use(cors());
+
+app.use('/auth', auth);
+app.use('/users', users);
+
 const db = require('./settings.env').mongoURI;
 
 mongoose
   .connect(db)
   .then(() => console.log('MongoDB connected..'))
   .catch(err => console.log(err));
-app.use(express.json());
-app.use(cors());
-
-app.use('/auth', auth);
-app.use('/users', users);
 
 const port = 3000;
 

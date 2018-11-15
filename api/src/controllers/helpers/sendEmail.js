@@ -1,6 +1,6 @@
 const nodemailer = require('nodemailer');
 
-const gmailPassword = require('../../../google.js').GMAIL_PASSWORD;
+const gmailPassword = require('./google.js').GMAIL_PASSWORD;
 
 function sendEmail(sendTo, subject, body) {
   const transporter = nodemailer.createTransport({

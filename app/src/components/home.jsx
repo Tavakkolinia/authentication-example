@@ -7,7 +7,7 @@ const Home = props => (
     <p>Welcome {props.user.firstName} {props.user.lastName}</p>
   </div>
 );
-
+// getArticleById - content
 Home.propTypes = {
   user: PropTypes.shape({
     firstName: PropTypes.string,
