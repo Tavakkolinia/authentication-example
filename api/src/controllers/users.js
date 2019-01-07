@@ -3,10 +3,10 @@ const sendEmail = require('./helpers/sendEmail');
 
 const index = (req, res) => {
   User.find()
-    .then((users) => {
+    .then(users => {
       res.status(200).json(users);
     })
-    .catch((error) => {
+    .catch(error => {
       console.log(error);
       res.sendStatus(500);
     });
@@ -18,11 +18,12 @@ const create = (req, res) => {
     firstName: req.body.firstName,
     lastName: req.body.lastName,
     email: req.body.email,
-    password: req.body.password,
+    password: req.body.password
   });
 
-  user.save()
-    .then((data) => {
+  user
+    .save()
+    .then(data => {
       const emailContent = `<p>Hi ${req.body.firstName},</p>
       <p>Thank you for signing up with the best in business. Please see below how the site is functioning.</p>
       <p>Kind regards,</p>
@@ -30,14 +31,13 @@ const create = (req, res) => {
       sendEmail(req.body.email, 'Thank you for signing up!', emailContent);
       res.send(data);
     })
-    .catch((error) => {
+    .catch(error => {
       console.log(error);
       res.sendStatus(500);
     });
 };
 
-
 module.exports = {
   index,
-  create,
+  create
 };
