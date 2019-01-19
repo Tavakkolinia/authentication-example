@@ -2,8 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 
-
-const { auth, users } = require('./src/routes');
+const { auth, users, AddEvent } = require('./src/routes');
 
 // require('dotenv').config();
 
@@ -14,6 +13,7 @@ app.use(cors());
 
 app.use('/auth', auth);
 app.use('/users', users);
+app.use('/add', AddEvent);
 
 const db = require('./settings.env').mongoURI;
 
