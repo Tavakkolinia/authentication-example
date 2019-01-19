@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+//import AddEvent from './addEvent';
+//import Events from './components/events';
 
 const Home = props => (
   <div>
@@ -9,16 +11,10 @@ const Home = props => (
     navbar-dark bg-primary mb-2 py-0"
     >
       <div className="container">
-        <a href="/" className="navbar-brand">
-          <h1>My Events</h1>
-        </a>
+        <h1>Events App</h1>
+
         <div>
           <ul className="navbar-nav mr-auto">
-            <li className="nav-item">
-              <Link to="/" className="nav-link">
-                <i className="fas fa-home" /> Home
-              </Link>
-            </li>
             <li className="nav-item">
               <Link to="/add" className="nav-link">
                 <i className="fas fa-plus" /> Add
@@ -27,6 +23,11 @@ const Home = props => (
             <li className="nav-item">
               <Link to="/about" className="nav-link">
                 <i className="fas fa-question" /> About
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/" className="nav-link">
+                <i className="fas fa-sign-out-alt" /> Log Out
               </Link>
             </li>
           </ul>
@@ -40,7 +41,9 @@ const Home = props => (
       </div>
     </h5>
     <div className="container text-center">
-      <h3>Events</h3>
+      <Link to="/events" className="nav-link">
+        <h3>Events</h3>
+      </Link>
     </div>
   </div>
 );

@@ -5,7 +5,8 @@ import Home from './components/home';
 import Login from './components/login';
 import SignUp from './components/sign-up';
 import About from './components/About';
-import addEvent from './components/addEvent';
+import AddEvent from './components/addEvent';
+import Events from './components/events';
 
 class App extends React.Component {
   constructor(props) {
@@ -41,8 +42,9 @@ class App extends React.Component {
           render={props => <Login {...props} onLogin={this.handleLogin} />}
         />
         <Route exact path="/sign-up" component={SignUp} />
+        <Route exact path="/events" component={Events} />
         <Route exact path="/about" component={About} />
-        <Route exact path="/add" component={addEvent} />
+        <Route exact path="/add" component={AddEvent} />
       </Switch>
     );
   }
