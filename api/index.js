@@ -18,7 +18,7 @@ app.use('/add', AddEvent);
 const db = require('./settings.env').mongoURI;
 
 mongoose
-  .connect(db)
+  .connect(db, { useNewUrlParser: true })
   .then(() => console.log('MongoDB connected..'))
   .catch(err => console.log(err));
 
